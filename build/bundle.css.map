@@ -1,8 +1,12 @@
 {
   "version": 3,
   "file": "bundle.css",
-  "sources": [],
-  "sourcesContent": [],
+  "sources": [
+    "..\\..\\App.svelte"
+  ],
+  "sourcesContent": [
+    "<style>\r\n    h1 {\r\n        font-weight: normal;\r\n    }\r\n\r\n    .emoji {\r\n        font-size: 20px;\r\n    }\r\n</style>\r\n\r\n<main>\r\n\t<h1>Hello {random}</h1>\r\n    <p>Thanks for checking my website, but it's still under construction for now</p>\r\n    <button on:click={setRandomEmoji}>Randomize emoji <span class=\"emoji\">{random}</span></button>\r\n</main>\r\n\r\n<script>\r\n    'use strict';\r\n    \r\n    const emojis = ['🗻', '🍲', '🏉', '🤼‍♂️', '👨‍💻', '⌨️', '👟', '🦠', '🎥', '🕹️', '🎲'];\r\n\r\n    const randomEmoji = () => {\r\n        return emojis[Math.floor(Math.random() * emojis.length)];\r\n    }\r\n\r\n    const setRandomEmoji = () => {\r\n        random = randomEmoji();\r\n    }\r\n\r\n    let random = randomEmoji();\r\n</script>"
+  ],
   "names": [],
-  "mappings": ""
+  "mappings": "AACI,EAAE,cAAC,CAAC,AACA,WAAW,CAAE,MAAM,AACvB,CAAC,AAED,MAAM,cAAC,CAAC,AACJ,SAAS,CAAE,IAAI,AACnB,CAAC"
 }
