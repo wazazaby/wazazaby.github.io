@@ -1,18 +1,23 @@
 <style>
+    h1 {
+        font-weight: normal;
+    }
 
+    .emoji {
+        font-size: 20px;
+    }
 </style>
 
 <main>
-	<h1>Hello World!</h1>
-    <h2>{random}</h2>
-    <button on:click={setRandomEmoji}>Get new emoji</button>
-    <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus eum facilis minima quidem sit officiis consequatur, ipsam laudantium, quas ut nemo veritatis quae! Sunt aliquam soluta, sint vero illo deleniti? => ===
-    </p>
+	<h1>Hello {random}</h1>
+    <p>Thanks for checking my website, but it's still under construction for now</p>
+    <button on:click={setRandomEmoji}>Randomize emoji <span class="emoji">{random}</span></button>
 </main>
 
 <script>
-    const emojis = ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😘', '😗', '😙', '😚'];
+    'use strict';
+    
+    const emojis = ['🗻', '🍲', '🏉', '🤼‍♂️', '👨‍💻', '⌨️', '👟', '🦠', '🎥', '🕹️', '🎲'];
 
     const randomEmoji = () => {
         return emojis[Math.floor(Math.random() * emojis.length)];
