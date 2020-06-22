@@ -1,10 +1,10 @@
 particlesJS('main-frame', {
     "particles": {
         "number": {
-            "value": 80,
+            "value": 50,
             "density": {
-                "enable": false,
-                "value_area": 2051.7838682439087
+                "enable": true,
+                "value_area": 800
             }
         },
         "color": {
@@ -68,7 +68,7 @@ particlesJS('main-frame', {
         }
     },
     "interactivity": {
-        "detect_on": "window",
+        "detect_on": "canvas",
         "events": {
             "onhover": {
                 "enable": false,
@@ -95,7 +95,7 @@ particlesJS('main-frame', {
                 "speed": 3
             },
             "repulse": {
-                "distance": 200,
+                "distance": 100,
                 "duration": 0.4
             },
             "push": {
