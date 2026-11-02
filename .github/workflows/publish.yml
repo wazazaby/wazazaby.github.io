@@ -1,0 +1,30 @@
+name: Publish static site
+
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Check out Pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: .pages
+      - name: Publish HTML and CSS
+        run: |
+          git -C .pages rm -r --quiet .
+          cp index.html style.css .pages/
+          touch .pages/.nojekyll
+          git -C .pages add --all
+          if git -C .pages diff --cached --quiet; then exit 0; fi
+          git -C .pages -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Publish static site"
+          git -C .pages push origin HEAD:master
